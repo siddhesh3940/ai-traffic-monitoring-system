@@ -2,6 +2,23 @@
 
 A comprehensive traffic monitoring and management system using computer vision, reinforcement learning, and intelligent traffic light control.
 
+## 📸 Screenshots
+
+### Main Dashboard
+![Main Dashboard](screenshot/Screenshot%202025-12-06%20173936.png)
+
+### Video Upload Interface
+![Video Upload](screenshot/Screenshot%202025-12-06%20173949.png)
+
+### Live Traffic Monitoring
+![Live Monitoring](screenshot/Screenshot%202025-12-06%20174004.png)
+
+### Traffic Light Simulation
+![Traffic Light Simulation](screenshot/Screenshot%202025-12-06%20174045.png)
+
+### DQN Analytics Dashboard
+![DQN Analytics](screenshot/Screenshot%202025-12-06%20174053.png)
+
 ## 🚀 Features
 
 - **Real-time Vehicle Detection**: Uses YOLO (You Only Look Once) for accurate vehicle detection and classification
@@ -19,7 +36,31 @@ A comprehensive traffic monitoring and management system using computer vision, 
 
 ## 🛠️ Installation & Setup
 
-### Method 1: Quick Start (Recommended)
+### Method 1: Quick Demo (Fastest - Recommended for Testing)
+
+**Try the system with auto-generated demo videos:**
+
+```bash
+python auto_demo.py
+```
+
+This will automatically:
+- ✅ Generate 4 demo traffic videos
+- ✅ Start the web server
+- ✅ Upload videos and start processing
+- ✅ Open ready-to-use dashboard
+
+**OR use the interactive demo setup:**
+
+```bash
+python demo_setup.py
+```
+
+Provides step-by-step guidance and generates demo data.
+
+📖 **See [DEMO_GUIDE.md](DEMO_GUIDE.md) for detailed demo instructions**
+
+### Method 2: Quick Start
 
 1. **Clone or download** this project to your computer
 2. **Open terminal/command prompt** in the project directory
@@ -33,7 +74,7 @@ The script will automatically:
 - Install required dependencies
 - Start the web server
 
-### Method 2: Manual Installation
+### Method 3: Manual Installation
 
 1. **Install dependencies**:
    ```bash
@@ -47,11 +88,26 @@ The script will automatically:
 
 ## 🌐 Usage
 
+### Quick Demo (No Video Upload Needed)
+
+If you used `auto_demo.py`, the system is already running with demo videos!
+
+1. **Open browser**: `http://localhost:8000`
+2. **View Live Monitoring**: See vehicles being detected in real-time
+3. **Try Traffic Light Simulation**: Click the button to see AI optimization
+
+### Manual Usage
+
 1. **Access the web interface**: Open your browser and go to `http://localhost:8000`
 
 2. **Upload Videos**: 
    - Go to the "Upload Videos" tab
    - Upload traffic videos for each direction (MP4, AVI, MOV formats)
+   - **OR use demo videos** from `uploads/` folder:
+     - `demo_right.mp4` → Right/East direction
+     - `demo_down.mp4` → Down/South direction  
+     - `demo_left.mp4` → Left/West direction
+     - `demo_up.mp4` → Up/North direction
    - Configure Region of Interest (ROI) for each direction
    - Click "Upload & Process All Videos"
 
@@ -99,15 +155,20 @@ The script will automatically:
 backend/
 ├── app3.py                 # Main FastAPI application
 ├── run.py                  # Startup script
+├── auto_demo.py            # Automated demo with auto-upload
+├── demo_setup.py           # Interactive demo setup
+├── generate_demo_data.py   # Demo video generator
 ├── requirements.txt        # Python dependencies
+├── README.md               # Main documentation
+├── DEMO_GUIDE.md           # Demo usage guide
 ├── templates/              # HTML templates
 │   ├── index.html         # Main dashboard
 │   ├── traffic_light.html # Traffic simulation
 │   └── dqn_graphs.html    # Analytics dashboard
 ├── static/                # CSS and static files
-├── uploads/               # Uploaded video files
+├── uploads/               # Uploaded video files (demo videos here)
 ├── images/                # Processed images
-└── README.md              # This file
+└── yolov8n.pt             # YOLO model (auto-downloaded)
 ```
 
 ## 🔧 Configuration
